@@ -1,1 +1,1 @@
-docker run -it --net="host" -v /home/alejandro/Projects/MedicionAgua:/app --name="medicionaguamobile" mt/medicionaguamobile
+docker run -it --net="host" -v /home/alejandro/Projects/job/MedicionAgua:/app --name="medicionaguamobile" mt/medicionaguamobile
