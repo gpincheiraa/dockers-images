@@ -3,4 +3,4 @@ read imagename
 echo "Ingrese un nombre para el contenedor:"
 read containername
 
-docker run -it --net='host' -v $(pwd):/home/dev/app --name='$containername' --privileged "$imagename"
+docker run -it --net='host' -v $(pwd):/home/dev/app --name="$containername" --privileged "$imagename"
