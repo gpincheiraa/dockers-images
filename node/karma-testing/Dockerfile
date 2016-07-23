@@ -32,7 +32,7 @@ RUN mkdir /home/dev/.npm-global && \
     npm config set prefix '/home/dev/.npm-global'
 
 RUN npm config set strict-ssl false && \
-    npm install -g bower grunt-cli karma-cli postcss phantomjs es6-promise cucumber && \
+    npm install -g bower grunt-cli karma-cli postcss phantomjs-prebuilt es6-promise cucumber && \
     export PHANTOMJS_BIN=/home/dev/.npm-config/phantomjs
 
 ENTRYPOINT ["/bin/sh", "-c", "/bin/bash"]
