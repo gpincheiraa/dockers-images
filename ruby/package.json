@@ -1,0 +1,11 @@
+{
+  "name": "indicadoresapi",
+  "version": "0.0.1",
+  "description": "Api para indicadores economicos y financieros de Chile",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alejandro Bustos <alejandrob@live.cl>",
+  "license": "MIT"
+}
