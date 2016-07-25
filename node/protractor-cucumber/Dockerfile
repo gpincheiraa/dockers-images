@@ -2,7 +2,7 @@ FROM node:slim
 MAINTAINER j.ciolek@webnicer.com
 WORKDIR /tmp
 
-RUN npm install -g protractor mocha jasmine && \
+RUN npm install -g protractor mocha jasmine cucumber && \
     webdriver-manager update && \
     apt-get update && \
     apt-get install -y xvfb wget openjdk-7-jre && \
