@@ -2,7 +2,7 @@ FROM node:slim
 MAINTAINER j.ciolek@webnicer.com
 WORKDIR /tmp
 
-RUN npm install -g protractor mocha jasmine cucumber && \
+RUN npm install -g protractor@3.3.0 mocha jasmine cucumber && \
     webdriver-manager update && \
     apt-get update && \
     apt-get install -y xvfb wget openjdk-7-jre && \
@@ -20,4 +20,4 @@ ADD protractor.sh /protractor.sh
 # https://github.com/SeleniumHQ/docker-selenium/issues/87
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 WORKDIR /protractor
-ENTRYPOINT ["/bin/sh", "-c", "/bin/bash"]
+ENTRYPOINT ["/protractor.sh"] 
