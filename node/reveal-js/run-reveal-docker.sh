@@ -3,4 +3,4 @@ read imagename
 echo "Ingrese un nombre para el contenedor:"
 read containername
 
-docker run -d -v $(pwd):/slides/ -p 8000:8000 --name="$containername" "$imagename"
+docker run --net=host -d -v $(pwd):/slides/ --name="$containername" "$imagename"
