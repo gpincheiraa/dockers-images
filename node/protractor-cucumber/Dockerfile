@@ -12,8 +12,7 @@ RUN npm install -g protractor@3.3.0 mocha jasmine cucumber && \
     apt-get clean && \
     apt-get install -y --force-yes libav-tools && \
     apt-get update && \
-    rm google-chrome-stable_current_amd64.deb && \
-    mkdir /protractor
+    rm google-chrome-stable_current_amd64.deb
 
 ADD protractor.sh /protractor.sh
 # Fix for the issue with Selenium, as described here:
@@ -25,5 +24,5 @@ RUN chown -R dev:dev /home/dev
 
 USER dev
 
-WORKDIR /home/dev/protractor
+WORKDIR /home/dev/app
 ENTRYPOINT ["/protractor.sh"] 
