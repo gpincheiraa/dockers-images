@@ -13,7 +13,7 @@ Esta imagen contiene la siguiente configuración
 - contiene un usuario llamado `dev` a quien le asignamos su respectivo directorio `/home/dev`. (Esto elimina la dependencia del comando sudo que eventualmente podría generarse al instalar determinados paquetes como por ejemplo phantomJS)
 - contiene un working directory en `/home/dev/app`
 - contiene una consola bash como punto de entrada al contenedor docker
-- La variable de ambiente `PHANTOMJS_BIN necesaria para ejecutar phantomJS
+- La variable de ambiente `PHANTOMJS_BIN` necesaria para ejecutar phantomJS
 
 ***Node 0.12***
 
@@ -28,6 +28,7 @@ Trae trae los siguientes paquetes `npm` instalados:
 **Ruby**
 
 Trae Ruby para instalar la gema **compass** necesaria para transformar scss a css.
+
 
 
 
