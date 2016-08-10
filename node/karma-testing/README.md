@@ -35,7 +35,8 @@ Trae Ruby para instalar la gema **compass** necesaria para transformar scss a cs
 **Instrucciones para construir esta imagen localmente**
 
 - Acceder al directorio `node/karma-testing`.
-- Ejecutar el comando `docker build -t frontendev-karma .`. Con esto creamos una imagen llamada `frontendev-karma`.
+- Ejecutar el comando `docker build -t frontendev-karma .`
+  Con esto creamos una imagen llamada `frontendev-karma`.
 
 **Crear un contenedor con el directorio de nuestro proyecto montado como un volumen en el working directory del docker**
 
