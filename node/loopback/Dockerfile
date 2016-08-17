@@ -12,7 +12,7 @@ WORKDIR /home/dev/app
 # Installing ndoemon globally
 RUN mkdir /home/dev/.npm-global && \
     npm config set prefix '/home/dev/.npm-global' && \ 
-    npm install -g strongloop
+    npm install -g strongloop nodemon
 
 
 ENTRYPOINT ["/bin/sh", "-c", "/bin/bash"]
