@@ -1,7 +1,7 @@
 FROM node:0.12-wheezy
 
 RUN apt-get update && apt-get install -y \
-    ruby \ 
+    ruby \
     ruby-dev
 
 RUN gem install compass --no-ri --no-rdoc
