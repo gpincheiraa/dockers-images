@@ -1,4 +1,4 @@
-FROM node:slim
+FROM node:6.6
 MAINTAINER j.ciolek@webnicer.com
 WORKDIR /tmp
 

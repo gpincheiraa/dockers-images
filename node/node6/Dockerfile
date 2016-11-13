@@ -8,6 +8,9 @@ ENV HOME /home/dev
 ENV PATH "$PATH:/home/dev/.npm-global/bin"
 WORKDIR /home/dev/app
 
+
+VOLUME ["/usr/local/bin/docker"]
+
 # Installing ndoemon globally
 RUN mkdir /home/dev/.npm-global && \
     npm config set prefix '/home/dev/.npm-global' && \ 
