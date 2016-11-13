@@ -1,5 +1,6 @@
 FROM node:0.12-wheezy
 #EXPOSE 9000
+#IF YOU NEED PROXY
 # ----------------------------------------------------------------------------------------
 # Any sudo command
 RUN apt-get update && apt-get install -y \
@@ -28,5 +29,3 @@ RUN npm config set strict-ssl false && \
     export PHANTOMJS_BIN=/home/dev/.npm-config/phantomjs
 
 ENTRYPOINT ["/bin/sh", "-c", "/bin/bash"]
-
-

@@ -9,6 +9,6 @@ WORKDIR /home/dev/app
 #     echo "YELLOW=\"\[\033[0;33m\]\"" >> ~/.profile && echo "GREEN=\"\[\033[0;32m\]\"" >> ~/.profile && \
 #     echo "NO_COLOR=\"\[\033[0m\]\"" >> ~/.profile && echo "PS1=\"$GREEN\u@\h$NO_COLOR:\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ \"" >> ~/.profile
 RUN mkdir /home/dev/.npm-global && \
-    npm config set prefix '/home/dev/.npm-global' && \ 
+    npm config set prefix '/home/dev/.npm-global' && \
     npm install -g bower grunt-cli
 ENTRYPOINT ["/bin/sh", "-c", "/bin/bash"]
