@@ -10,7 +10,6 @@ RUN apt-get update -qq && apt-get install -qqy \
     curl \
     lxc \
     iptables
-    
 # Install Docker from Docker Inc. repositories.
 RUN curl -sSL https://get.docker.com/ | sh
 
@@ -24,7 +23,8 @@ CMD ["wrapdocker"]
 
 
 # ********** Node 6 stuffs ************************
-
+EXPOSE 8080
+EXPOSE 80
 # Adding a user
 RUN useradd -ms /bin/bash dev
 RUN chown -R dev:dev /home/dev
@@ -43,7 +43,7 @@ WORKDIR /home/dev/app
 
 # Installing ndoemon globally
 RUN mkdir /home/dev/.npm-global && \
-    npm config set prefix '/home/dev/.npm-global' && \ 
+    npm config set prefix '/home/dev/.npm-global' && \
     npm install -g nodemon
 
 
