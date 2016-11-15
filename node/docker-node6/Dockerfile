@@ -16,10 +16,10 @@ RUN curl -sSL https://get.docker.com/ | sh
 # Install the magic wrapper.
 ADD ./wrapdocker /usr/local/bin/wrapdocker
 RUN chmod +x /usr/local/bin/wrapdocker
+RUN "wrapdocker"
 
 # Define additional metadata for our image.
 VOLUME /var/lib/docker
-CMD ["wrapdocker"]
 
 
 # ********** Node 6 stuffs ************************
@@ -32,13 +32,14 @@ RUN chown -R dev:dev /home/dev
 # Adding user dev to the docker group and run docker service
 USER root
 RUN usermod -aG docker dev
-CMD ["service docker start"]
 
 #Use dev user
 USER dev
 ENV HOME /home/dev
 ENV PATH "$PATH:/home/dev/.npm-global/bin"
 WORKDIR /home/dev/app
+
+RUN apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/*
 
 
 # Installing ndoemon globally
@@ -48,4 +49,3 @@ RUN mkdir /home/dev/.npm-global && \
 
 
 ENTRYPOINT ["/bin/sh", "-c", "/bin/bash"]
-
