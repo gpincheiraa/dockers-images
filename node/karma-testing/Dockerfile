@@ -11,7 +11,7 @@ RUN gem install compass --no-ri --no-rdoc
 
 # ----------------------------------------------------------------------------------------
 # NO more sudo commands
-RUN useradd -ms /bin/bash dev
+RUN useradd -ms /bin/bash -u 1001 dev
 
 RUN chown -R dev:dev /home/dev
 
@@ -25,7 +25,7 @@ RUN mkdir /home/dev/.npm-global && \
     npm config set prefix '/home/dev/.npm-global'
 
 RUN npm config set strict-ssl false && \
-    npm install -g bower grunt-cli karma-cli postcss phantomjs-prebuilt es6-promise && \
+    npm install -g bower grunt-cli karma-cli postcss phantomjs-prebuilt es6-promise stubby && \
     export PHANTOMJS_BIN=/home/dev/.npm-config/phantomjs
 
 ENTRYPOINT ["/bin/sh", "-c", "/bin/bash"]

@@ -1,14 +1,10 @@
-FROM node:6-slim
+FROM node:6.9.2-wheezy
 
 VOLUME ["/usr/local/bin/docker"]
 
 # Adding a user
-RUN useradd -ms /bin/bash dev
+RUN useradd -ms /bin/bash -u 1001 dev
 RUN chown -R dev:dev /home/dev
-
-# Adding user to the docker group
-USER root
-RUN usermod -aG docker dev
 
 #Use dev user
 USER dev
@@ -20,7 +16,7 @@ WORKDIR /home/dev/app
 # Installing ndoemon globally
 RUN mkdir /home/dev/.npm-global && \
     npm config set prefix '/home/dev/.npm-global' && \ 
-    npm install -g nodemon
+    npm install -g babel-cli
 
 
 ENTRYPOINT ["/bin/sh", "-c", "/bin/bash"]
